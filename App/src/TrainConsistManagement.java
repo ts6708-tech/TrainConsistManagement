@@ -1,5 +1,22 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
+// Bogie Class (OOP)
+class Bogie {
+    String type;
+    int capacity;
+
+    // Constructor
+    Bogie(String type, int capacity) {
+        this.type = type;
+        this.capacity = capacity;
+    }
+
+    // Display bogie details
+    public String toString() {
+        return type + " (Capacity: " + capacity + ")";
+    }
+}
 
 public class TrainConsistManagement {
 
@@ -8,21 +25,29 @@ public class TrainConsistManagement {
         // Welcome Message
         System.out.println("=== Train Consist Management App ===");
 
-        // Create HashSet for unique bogie IDs
-        Set<String> bogieIds = new HashSet<>();
+        // Create list of bogies
+        List<Bogie> bogies = new ArrayList<>();
 
-        // Add bogie IDs (including duplicates)
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
-        bogieIds.add("BG103");
-        bogieIds.add("BG101"); // duplicate
-        bogieIds.add("BG102"); // duplicate
+        // Add Passenger Bogies
+        bogies.add(new Bogie("Sleeper", 72));
+        bogies.add(new Bogie("AC Chair", 50));
+        bogies.add(new Bogie("First Class", 30));
 
-        // Display bogie IDs
-        System.out.println("\nBogie IDs after insertion (duplicates ignored):");
-        System.out.println(bogieIds);
+        // Display bogies
+        System.out.println("\nTrain Bogies:");
+        for (Bogie b : bogies) {
+            System.out.println(b);
+        }
+
+        // Total capacity calculation
+        int totalCapacity = 0;
+        for (Bogie b : bogies) {
+            totalCapacity += b.capacity;
+        }
+
+        System.out.println("\nTotal Passenger Capacity: " + totalCapacity);
 
         // Program continues
-        System.out.println("\nSystem ensures unique bogie IDs...");
+        System.out.println("\nSystem ready for advanced operations...");
     }
 }
