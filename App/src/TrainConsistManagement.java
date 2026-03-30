@@ -1,22 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-
-// Bogie Class (OOP)
-class Bogie {
-    String type;
-    int capacity;
-
-    // Constructor
-    Bogie(String type, int capacity) {
-        this.type = type;
-        this.capacity = capacity;
-    }
-
-    // Display bogie details
-    public String toString() {
-        return type + " (Capacity: " + capacity + ")";
-    }
-}
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class TrainConsistManagement {
 
@@ -25,29 +8,25 @@ public class TrainConsistManagement {
         // Welcome Message
         System.out.println("=== Train Consist Management App ===");
 
-        // Create list of bogies
-        List<Bogie> bogies = new ArrayList<>();
+        // Create LinkedHashSet for train formation
+        Set<String> trainFormation = new LinkedHashSet<>();
 
-        // Add Passenger Bogies
-        bogies.add(new Bogie("Sleeper", 72));
-        bogies.add(new Bogie("AC Chair", 50));
-        bogies.add(new Bogie("First Class", 30));
+        // Add bogies (in order)
+        trainFormation.add("Engine");
+        trainFormation.add("Sleeper");
+        trainFormation.add("Cargo");
+        trainFormation.add("Guard");
 
-        // Display bogies
-        System.out.println("\nTrain Bogies:");
-        for (Bogie b : bogies) {
-            System.out.println(b);
+        // Add duplicate intentionally
+        trainFormation.add("Sleeper"); // duplicate → ignored
+
+        // Display formation
+        System.out.println("\nTrain Formation (in insertion order, no duplicates):");
+        for (String bogie : trainFormation) {
+            System.out.println(bogie);
         }
-
-        // Total capacity calculation
-        int totalCapacity = 0;
-        for (Bogie b : bogies) {
-            totalCapacity += b.capacity;
-        }
-
-        System.out.println("\nTotal Passenger Capacity: " + totalCapacity);
 
         // Program continues
-        System.out.println("\nSystem ready for advanced operations...");
+        System.out.println("\nSystem ensures ordered and unique train composition...");
     }
 }
