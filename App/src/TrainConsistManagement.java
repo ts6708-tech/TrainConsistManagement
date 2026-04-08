@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 // Bogie class
 class Bogie {
@@ -22,7 +20,6 @@ public class TrainConsistManagement {
 
     public static void main(String[] args) {
 
-        // Welcome
         System.out.println("=== Train Consist Management App ===");
 
         // Create bogie list
@@ -30,24 +27,21 @@ public class TrainConsistManagement {
 
         bogies.add(new Bogie("Sleeper", 72));
         bogies.add(new Bogie("AC Chair", 50));
-        bogies.add(new Bogie("Sleeper", 70));      // duplicate type
         bogies.add(new Bogie("First Class", 30));
-        bogies.add(new Bogie("AC Chair", 55));     // duplicate type
+        bogies.add(new Bogie("Luxury", 80));
 
-        // Display original list
+        // Display bogies
         System.out.println("\nAll Bogies:");
         bogies.forEach(System.out::println);
 
-        // GROUPING BY TYPE (name)
-        Map<String, List<Bogie>> grouped = bogies.stream()
-                .collect(Collectors.groupingBy(b -> b.name));
+        // UC10: TOTAL CAPACITY USING STREAM
+        int totalSeats = bogies.stream()
+                .map(b -> b.capacity)     // extract capacity
+                .reduce(0, Integer::sum); // sum all
 
-        // Display grouped result
-        System.out.println("\nGrouped Bogies:");
-        grouped.forEach((type, list) -> {
-            System.out.println(type + " → " + list);
-        });
+        // Output
+        System.out.println("\nTotal Seating Capacity: " + totalSeats);
 
-        System.out.println("\nSystem supports grouping for analytics...");
+        System.out.println("\nSystem supports aggregation using reduce...");
     }
 }
