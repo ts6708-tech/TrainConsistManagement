@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 // Bogie class
@@ -21,33 +20,33 @@ public class TrainConsistManagement {
 
     public static void main(String[] args) {
 
-        // Welcome Message
+        // Welcome
         System.out.println("=== Train Consist Management App ===");
 
-        // Create list of bogies
+        // Original list
         List<Bogie> bogies = new ArrayList<>();
-
-        // Add passenger bogies
         bogies.add(new Bogie("Sleeper", 72));
         bogies.add(new Bogie("AC Chair", 50));
         bogies.add(new Bogie("First Class", 30));
+        bogies.add(new Bogie("Luxury", 80));
 
-        // Display before sorting
-        System.out.println("\nBefore Sorting:");
-        for (Bogie b : bogies) {
-            System.out.println(b);
-        }
+        // Display original list
+        System.out.println("\nAll Bogies:");
+        bogies.forEach(System.out::println);
 
-        // Sort using Comparator (by capacity ASC)
-        bogies.sort(Comparator.comparingInt(b -> b.capacity));
+        // STREAM FILTER → capacity > 60
+        List<Bogie> filtered = bogies.stream()
+                .filter(b -> b.capacity > 60)
+                .toList();   // Java 16+ (OK)
 
-        // Display after sorting
-        System.out.println("\nAfter Sorting by Capacity:");
-        for (Bogie b : bogies) {
-            System.out.println(b);
-        }
+        // Display filtered list
+        System.out.println("\nFiltered Bogies (Capacity > 60):");
+        filtered.forEach(System.out::println);
 
-        // Program continues
-        System.out.println("\nSystem ready for optimized planning...");
+        // Verify original list unchanged
+        System.out.println("\nOriginal List (unchanged):");
+        bogies.forEach(System.out::println);
+
+        System.out.println("\nSystem supports stream-based filtering...");
     }
 }
