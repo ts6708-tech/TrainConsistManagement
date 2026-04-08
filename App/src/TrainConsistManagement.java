@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-// Bogie class (reuse from UC7)
+// Bogie class
 class Bogie {
     String name;
     int capacity;
@@ -18,6 +17,7 @@ class Bogie {
 }
 
 public class TrainConsistManagement {
+
     public static void main(String[] args) {
 
         // Welcome
@@ -37,7 +37,7 @@ public class TrainConsistManagement {
         // STREAM FILTER → capacity > 60
         List<Bogie> filtered = bogies.stream()
                 .filter(b -> b.capacity > 60)
-                .toList();
+                .toList();   // Java 16+ (OK)
 
         // Display filtered list
         System.out.println("\nFiltered Bogies (Capacity > 60):");
@@ -49,5 +49,4 @@ public class TrainConsistManagement {
 
         System.out.println("\nSystem supports stream-based filtering...");
     }
-
 }
