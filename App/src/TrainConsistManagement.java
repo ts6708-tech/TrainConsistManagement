@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 // Bogie class
 class Bogie {
@@ -23,30 +25,29 @@ public class TrainConsistManagement {
         // Welcome
         System.out.println("=== Train Consist Management App ===");
 
-        // Original list
+        // Create bogie list
         List<Bogie> bogies = new ArrayList<>();
+
         bogies.add(new Bogie("Sleeper", 72));
         bogies.add(new Bogie("AC Chair", 50));
+        bogies.add(new Bogie("Sleeper", 70));      // duplicate type
         bogies.add(new Bogie("First Class", 30));
-        bogies.add(new Bogie("Luxury", 80));
+        bogies.add(new Bogie("AC Chair", 55));     // duplicate type
 
         // Display original list
         System.out.println("\nAll Bogies:");
         bogies.forEach(System.out::println);
 
-        // STREAM FILTER → capacity > 60
-        List<Bogie> filtered = bogies.stream()
-                .filter(b -> b.capacity > 60)
-                .toList();   // Java 16+ (OK)
+        // GROUPING BY TYPE (name)
+        Map<String, List<Bogie>> grouped = bogies.stream()
+                .collect(Collectors.groupingBy(b -> b.name));
 
-        // Display filtered list
-        System.out.println("\nFiltered Bogies (Capacity > 60):");
-        filtered.forEach(System.out::println);
+        // Display grouped result
+        System.out.println("\nGrouped Bogies:");
+        grouped.forEach((type, list) -> {
+            System.out.println(type + " → " + list);
+        });
 
-        // Verify original list unchanged
-        System.out.println("\nOriginal List (unchanged):");
-        bogies.forEach(System.out::println);
-
-        System.out.println("\nSystem supports stream-based filtering...");
+        System.out.println("\nSystem supports grouping for analytics...");
     }
 }
