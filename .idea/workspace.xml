@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ac45703-b324-4e90-9255-1c5031e561b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/App/src/TrainConsistManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/App/src/TrainConsistManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/TrainConsistManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/UseCase13TrainConsistMgmt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/test/UseCase13TrainConsistMgmtTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,15 +31,16 @@
     &quot;assignee&quot;: &quot;ts6708-tech&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="6adef1ac-d70b-4511-95b4-fa26c9a52a7a" />
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ts6708-tech/TrainConsistManagement.git&quot;,
     &quot;accountId&quot;: &quot;6adef1ac-d70b-4511-95b4-fa26c9a52a7a&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -52,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature-uc11",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "F:/RA2411003011282/TrainConsistManagement",
     "project.structure.last.edited": "Project",
