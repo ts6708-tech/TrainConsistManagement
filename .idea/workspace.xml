@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ac45703-b324-4e90-9255-1c5031e561b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/TrainConsistManagement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/main/UseCase13TrainConsistMgmt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/src/test/UseCase13TrainConsistMgmtTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/main/UseCase15TrainConsistMgmt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/src/test/UseCase15TrainConsistMgmtTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +50,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.TrainConsistManagement.executor": "Run",
+    "JUnit.UseCase15TrainConsistMgmtTest.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
