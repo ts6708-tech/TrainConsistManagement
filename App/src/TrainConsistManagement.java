@@ -34,7 +34,7 @@ public class TrainConsistManagement {
         System.out.println("\nGoods Bogies:");
         goods.forEach(System.out::println);
 
-        // UC12: SAFETY CHECK
+        // SAFETY CHECK
         boolean isSafe = goods.stream()
                 .allMatch(b ->
                         !b.type.equals("Cylindrical") ||
